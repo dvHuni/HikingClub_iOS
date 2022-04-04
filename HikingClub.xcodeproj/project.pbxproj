@@ -180,6 +180,9 @@
 		77E5913827115F890070F381 /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E5913727115F890070F381 /* LoginNavigationViewController.swift */; };
 		77E5913C271170860070F381 /* LoginNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E5913B271170860070F381 /* LoginNavigationViewModel.swift */; };
 		77E591402711723C0070F381 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E5913F2711723C0070F381 /* SignUpViewController.swift */; };
+		8534551327FAC2EC0091E512 /* RootDIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534551227FAC2EC0091E512 /* RootDIComponent.swift */; };
+		8534551627FAC3C60091E512 /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 8534551527FAC3C60091E512 /* NeedleFoundation */; };
+		8534551827FAC4920091E512 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534551727FAC4920091E512 /* NeedleGenerated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -348,6 +351,8 @@
 		77E5913727115F890070F381 /* LoginNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewController.swift; sourceTree = "<group>"; };
 		77E5913B271170860070F381 /* LoginNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewModel.swift; sourceTree = "<group>"; };
 		77E5913F2711723C0070F381 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8534551227FAC2EC0091E512 /* RootDIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDIComponent.swift; sourceTree = "<group>"; };
+		8534551727FAC4920091E512 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +365,7 @@
 				7755081F26F84E52005B8763 /* CombineMoya in Frameworks */,
 				7755081026F84DA0005B8763 /* RxRelay in Frameworks */,
 				7722136F27401F1400A42CCA /* Kingfisher in Frameworks */,
+				8534551627FAC3C60091E512 /* NeedleFoundation in Frameworks */,
 				7755082326F84E52005B8763 /* Moya in Frameworks */,
 				7755081226F84DA0005B8763 /* RxCocoa in Frameworks */,
 				7755081D26F84E52005B8763 /* ReactiveMoya in Frameworks */,
@@ -786,6 +792,7 @@
 			children = (
 				775507F526F842E5005B8763 /* HikingClub */,
 				775507F426F842E5005B8763 /* Products */,
+				8534551427FAC3C60091E512 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -800,6 +807,8 @@
 		775507F526F842E5005B8763 /* HikingClub */ = {
 			isa = PBXGroup;
 			children = (
+				8534551727FAC4920091E512 /* NeedleGenerated.swift */,
+				8534551227FAC2EC0091E512 /* RootDIComponent.swift */,
 				77169DCD270C8C14000AB1D2 /* Helper */,
 				067DC4EA26FEF38700650862 /* Network */,
 				77169DC3270AD076000AB1D2 /* Feature */,
@@ -1086,6 +1095,13 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		8534551427FAC3C60091E512 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1096,6 +1112,7 @@
 				775507EF26F842E5005B8763 /* Sources */,
 				775507F026F842E5005B8763 /* Frameworks */,
 				775507F126F842E5005B8763 /* Resources */,
+				8534551127FAC2B40091E512 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1113,6 +1130,7 @@
 				7755082226F84E52005B8763 /* Moya */,
 				77B7A1272708A674008F5530 /* SnapKit */,
 				7722136E27401F1400A42CCA /* Kingfisher */,
+				8534551527FAC3C60091E512 /* NeedleFoundation */,
 			);
 			productName = HikingClub;
 			productReference = 775507F326F842E5005B8763 /* HikingClub.app */;
@@ -1187,6 +1205,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8534551127FAC2B40091E512 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport SOURCEKIT_LOGGING=0 && needle generate HikingClub/NeedleGenerated.swift HikingClub/\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		775507EF26F842E5005B8763 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1202,6 +1240,7 @@
 				777B517727129EA700299430 /* SignUpTermStackView.swift in Sources */,
 				777B516F27119A9200299430 /* CodeBasedView.swift in Sources */,
 				77238834273FDC2200F3AA84 /* SignUpAPI.swift in Sources */,
+				8534551327FAC2EC0091E512 /* RootDIComponent.swift in Sources */,
 				06962E9F272BCD400021402F /* CategoryCollectionViewCell.swift in Sources */,
 				06A1ECA82711782100EA78D8 /* NDButton.swift in Sources */,
 				2851120B275360AE00C2E31C /* OnboardingPageViewController.swift in Sources */,
@@ -1295,6 +1334,7 @@
 				283AF06D27086B950033ED71 /* HomeViewController.swift in Sources */,
 				779B950C2746818F00325353 /* UserService.swift in Sources */,
 				77C69BEB272CD4E6004C2207 /* KeyboardAccessoryToolbar.swift in Sources */,
+				8534551827FAC4920091E512 /* NeedleGenerated.swift in Sources */,
 				7741CA75275C99B000DBD24B /* SignUpResponseModel.swift in Sources */,
 				0698EF31274CDCE100D7AF2A /* NDIndicator.swift in Sources */,
 				06AB8CBA273136F7007F32AA /* SearchCategoryResultViewController.swift in Sources */,
@@ -1486,8 +1526,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8WGBZHP3L6;
 				INFOPLIST_FILE = HikingClub/SupportingFiles/Info.plist;
@@ -1499,7 +1539,7 @@
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sz.HikingClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = mashuphikingclub;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1510,8 +1550,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8WGBZHP3L6;
 				INFOPLIST_FILE = HikingClub/SupportingFiles/Info.plist;
@@ -1523,7 +1563,7 @@
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sz.HikingClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = mashuphikingclub;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1653,6 +1693,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 77B7A1262708A674008F5530 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8534551527FAC3C60091E512 /* NeedleFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8534550F27FAC1EC0091E512 /* XCRemoteSwiftPackageReference "needle" */;
+			productName = NeedleFoundation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

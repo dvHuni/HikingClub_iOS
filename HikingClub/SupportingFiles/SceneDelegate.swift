@@ -22,9 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //온보딩 띄우기
             userDefault.save(true)
         } else {
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let mainTabBarViewController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-            window?.rootViewController = mainTabBarViewController
+            window?.rootViewController = RootDIComponent().tabBarController
+            window?.makeKeyAndVisible()
         }
     }
     

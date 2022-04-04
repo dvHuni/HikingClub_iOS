@@ -10,29 +10,30 @@ import RxSwift
 import RxRelay
 
 final class MainTabBarController: UITabBarController {
-    private let homeViewController: UINavigationController = {
-        let homeStoryBoard = UIStoryboard(name: "Home", bundle: nil)
-        let homeViewController = homeStoryBoard.instantiate("HomeViewController") { coder -> HomeViewController in
-                .init(coder, HomeViewModel()) ?? HomeViewController(HomeViewModel())
-        }
-        return homeViewController.wrappedByNavigationController()
-    }()
+    private let homeViewController: UINavigationController
+    private let searchViewController: UINavigationController
+    private let writeViewController: UINavigationController
+    private let myPageViewController: UINavigationController
+    private let loginViewCotroller: UINavigationController
     
-    private let searchViewController: UINavigationController = {
-        let searchStoryboard = UIStoryboard(name: "Search", bundle: nil)
-        let searchViewController = searchStoryboard.instantiate("SearchViewController") { coder -> SearchViewController? in
-                .init(coder, SearchViewModel())
-        }
-        return searchViewController.wrappedByNavigationController()
-    }()
+    init(
+        _ home: HomeViewControllerBuilder,
+        _ search: SearchViewControllerBuilder,
+        _ write: WriteViewControllerBuilder,
+        _ myPage: MyPageViewControllerBuilder,
+        _ login: LoginNavigationViewControllerBuilder
+    ) {
+        homeViewController = home.viewController.wrappedByNavigationController()
+        searchViewController = search.viewController.wrappedByNavigationController()
+        writeViewController = write.viewController.wrappedByNavigationController()
+        myPageViewController = myPage.viewController.wrappedByNavigationController()
+        loginViewCotroller = login.viewController.wrappedByNavigationController()
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    private let writeViewController: UINavigationController = {
-        UIViewController().wrappedByNavigationController()
-    }()
-    
-    private let myPageViewController: UINavigationController = {
-        MyPageViewController(MyPageViewModel()).wrappedByNavigationController()
-    }()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     enum TabBarIndex: Int {
         case home
